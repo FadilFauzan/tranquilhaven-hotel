@@ -1,66 +1,160 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# **TranquilHaven Hotel**
+### **Hotel Room Reservation System**
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+A responsive web application for hotel room reservations, built with **Laravel** and integrated with **Midtrans Payment Gateway**. This system provides a seamless experience for customers to book rooms and for administrators to manage room availability and bookings.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## **Features**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### **For Customers**
+- **Room Browsing**: Explore rooms with images, capacity, size, and availability.
+- **Category Filtering**: Filter rooms by specific categories.
+- **Real-Time Availability**: Check room availability in real-time.
+- **Secure Payments**: Make online payments securely through Midtrans.
+- **Booking Receipt**: Get detailed payment receipts for every transaction.
+- **Status Indicators**: Clearly see room statuses (*Booked* or *Available*).
 
-## Learning Laravel
+### **For Administrators**
+- **Room Management**: Add, edit, and manage room details, including categories and prices.
+- **Dashboard Insights**: Monitor total rooms, booked rooms, and available rooms by category.
+- **Automated Availability Updates**: Automatically update room statuses after successful bookings.
+- **Transaction Records**: View transaction history with payment details.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## **Technologies Used**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### **Frontend**
+- **HTML5**, **CSS3**, **SCSS**, **Bootstrap**: For a responsive and user-friendly interface.
 
-## Laravel Sponsors
+### **Backend**
+- **Laravel Framework**: To handle routing, database, and business logic.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### **Database**
+- **MySQL**: To manage data for rooms, bookings, and transactions.
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Page Breakdown (with Visuals)
 
-## Contributing
+### Home Page
+![Home Page](./screenshoots/home.jpg)
+![Home Page](./screenshoots/home_desc.jpg)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Rooms Page
+![Room Page](./screenshoots/rooms.jpg)
+![Detail Room Page](./screenshoots/room_detail.jpg)
 
-## Code of Conduct
+### Reservation Page
+![Reservation Page](./screenshoots/reservation_form.jpg)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Contact Page
+![Contact Page](./screenshoots/contact.jpg)
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## **Third-Party Services**
 
-## License
+### **1. Midtrans API**
+- **Purpose**: Provides secure and seamless payment transactions.
+- **Features**:
+  - Integration with various payment methods such as credit/debit cards, bank transfers, and e-wallets.
+  - Supports 3D Secure for additional payment security.
+  - Sandbox environment for testing before going live.
+- **Setup**:
+  1. Create an account at [Midtrans](https://midtrans.com) and obtain your **Server Key** and **Client Key**.
+  2. Configure the credentials in the `.env` file:
+     ```env
+     MIDTRANS_SERVER_KEY=your_server_key
+     MIDTRANS_CLIENT_KEY=your_client_key
+     ```
+- **Usage**: Handles all payment processing, including verifying payment success and status updates.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+### **2. Mailtrap**
+- **Purpose**: For testing and previewing emails before sending them to real users.
+- **Features**:
+  - Provides an inbox to capture test emails without sending them to users.
+  - SMTP credentials for local email testing.
+  - Useful for ensuring email formats and content are correct before going live.
+- **Setup**:
+  1. Sign up at [Mailtrap](https://mailtrap.io) and create an inbox.
+  2. Configure the SMTP settings in your `.env` file:
+     ```env
+     MAIL_MAILER=smtp
+     MAIL_HOST=sandbox.smtp.mailtrap.io
+     MAIL_PORT=2525
+     MAIL_USERNAME=your_mailtrap_username
+     MAIL_PASSWORD=your_mailtrap_password
+     MAIL_ENCRYPTION=null
+     ```
+- **Usage**: All email-related functionalities, like booking confirmations, are tested through Mailtrap during development.
+
+---
+
+### **3. Google OAuth API**
+- **Purpose**: Enables users to log in using their Google account.
+- **Features**:
+  - Simplifies user authentication using Google credentials.
+  - Secure and widely trusted method for login.
+  - Reduces the need for users to remember another password.
+- **Setup**:
+  1. Create OAuth 2.0 credentials in the [Google Developer Console](https://console.developers.google.com/).
+  2. Add the generated credentials to your `.env` file:
+     ```env
+     GOOGLE_CLIENT_ID=your_google_client_id
+     GOOGLE_CLIENT_SECRET=your_google_client_secret
+     GOOGLE_CLIENT_REDIRECT=http://127.0.0.1:8000/login/google/callback
+     ```
+- **Usage**: Google OAuth API handles the login flow for a smooth and secure experience.
+
+---
+
+## **Getting Started**
+
+### **Prerequisites**
+- PHP >= 8.1
+- Composer
+- Node.js & NPM
+- MySQL
+
+---
+
+### **Setup & Installation**
+
+```bash
+git clone https://github.com/fadilfauzan/tranquilhaven-hotel.git
+cd tranquilhaven-hotel
+composer install
+npm install && npm run dev
+cp .env.example .env
+php artisan key:generate
+```
+Update `.env` with DB credentials, then:
+
+```bash
+php artisan migrate --seed
+php artisan serve
+```
+
+Visit: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+---
+
+## File Structure (Simplified)
+
+```
+larassa/
+├── public/
+├── resources/
+│   ├── views/
+│   ├── css/ & js/
+├── routes/web.php
+├── .env
+└── README.md
+```
+
+---
